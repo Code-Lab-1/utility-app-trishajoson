@@ -1,5 +1,8 @@
+from datetime import datetime
+import random
 
-
+now = datetime.now()
+ 
 
 txt= "Vending Machine"
 centre_txt= txt.center(63)
@@ -20,13 +23,13 @@ class Menu:
     
 menu0= Menu("0  ","Lays- Salt and Vinegar   ", "3.50 AED")
 menu1= Menu("1  ","Doritos- Sweet and Chilli", "2 AED")
-menu2= Menu("2  ","Pringles- BBQ Flavor     ", "6.50 AED")
+menu2= Menu("2  ","Pringles- BBQ Flavor     ", "5.50 AED")
 menu3= Menu("3  ","Lays- Salt and Vinegar   ", "1.75 AED")
 
 menu4= Menu("4  ","Snickers                 ", "3 AED")
 menu5= Menu("5  ","Mars                     ", "2.50 AED")
 menu6= Menu("6  ","Kitkat                   ", "2 AED")
-menu7= Menu("7  ","Toblerone                ", "5.75 AED")
+menu7= Menu("7  ","Toblerone                ", "3.50 AED")
 
 menu8= Menu("8  ","Melco(Mango)             ", "1.50 AED")
 menu9= Menu("9  ","Avacado Mix              ", "7 AED")
@@ -87,7 +90,111 @@ menu22.DisplayMenu()
 menu23.DisplayMenu()
 
 
-        
+item0= 3.5
+item1= 2
+item2= 5.5
+item3= 1.75
 
+item4= 3
+item5=2.5
+item6= 2
+item7= 3.5
+
+item8= 1.5
+item9= 7 
+item10= 2
+item11= 2
+
+item12= 2.5
+item13= 1
+item14= 5.5
+item15=2.5
+
+item16=3.5
+item17=2.25
+item18= 3.5
+item19=2
+
+item20=4.5
+item21=4
+item22=1
+item23=8
+
+
+
+menu={"0":"Lays- Salt and Vinegar",
+      "1":"Doritos- Sweet Chilli)",
+      "2": "Pringles- BBQ Flavor",
+      "3": "Salad Chips",
+      "4": "Snickers",
+      "5": "Mars",
+      "6": "KitKat",
+      "7": "Toblerone",
+      "8": "Melco(Mango)",
+      "9": "Avacado Mix",
+      "10": "Capri Sun(Cocktail)",
+      "11": "Lacnor(Orange)",
+      "12": "Chocolate Milk",
+      "13": "Laban",
+      "14": "Greek Yogurt",
+      "15": "Banana Milk",
+      "16": "Coca Cola",
+      "17": "Vimto",
+      "18": "Mountain Dew",
+      "19": "7-Up",
+      "20": "Espresso",
+      "21": "Cappuccino",
+      "22": "Karak Tea",
+      "23": "Americano"}
+
+#PriceofDrinks= item9+item10+item11+item12+item13+item14+item15+item16+item17+item18+item19+item20+item21+item22+item23
+
+budget=int(input("\nEnter your budget: "))
+option=input("Please select your desirable item according to the number: ")
+
+amount=0
+if option=='0' or option=="7" or option=="18":
+    amount= budget - float(item0)
+elif option=='1' or option=="6" or option=="11":
+    amount= budget - float(item1)
+elif option=="2" or option=="14":
+    amount= budget - float(item2)
+elif option=="3":
+    amount= budget - float(item3)
+elif option=='4':
+    amount= budget - float(item2)
+elif option=="5" or option=="10" or option=="12" or option =="15":
+    amount= budget - float(item6)
+elif option=="8":
+    amount= budget - float(item8)
+elif option=="9":
+    amount= budget - float(item4)
+elif option=="13" or option=="22":
+    amount= budget - float(item13)
+elif option=="17":
+    amount= budget - float(item17)
+elif option=="20":
+    amount= budget - float(item20)
+elif option=="21":
+    amount= budget - float(item21)
+elif option=="23":
+    amount= budget- float(item23)
+
+   
+else:
+    print("Invalid input")
+
+vat= float('%.2f'%((amount)*0.05))
+total=vat+amount
+ran= random.randint(100,1000)
+balance='%.2f'%(budget-total)
+
+for x, y in menu.items():
+        if option==x:
+            print("You have selected", y)
+            print("\n                                     CASH RECEIPT","\n\tReceipt number:",ran,"\n\tItem purchased:",y,"\n\t5% Vat:",vat,"\n\tTotal amount with 5% VAT:", total,"\n\tYour balance is:", balance,"AED","\n\tDate of purchase:", now,"\n")
+
+    
+print("Thank you for the purchase, please collect your item in the tray and balance through the output.")
 
 
