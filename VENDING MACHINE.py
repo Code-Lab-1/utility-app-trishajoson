@@ -4,7 +4,7 @@ import random
 now = datetime.now()
  
 
-txt= "Vending Machine"
+txt= "✯✯ SNACK-STATION Vending Machine ✯✯"
 centre_txt= txt.center(63)
 
 class Menu:
@@ -53,37 +53,37 @@ menu23=Menu("23 ","Americano                ", "8 AED")
 
 
 print(centre_txt)
-print("\n\t\t\tChips")
+print("\n\t\t\t🍟     Chips      🍟")
 menu0.DisplayMenu()
 menu1.DisplayMenu()
 menu2.DisplayMenu()
 menu3.DisplayMenu()
 
-print("\n\t\t\tChocolates")
+print("\n\t\t\t🍫   Chocolates   🍫")
 menu4.DisplayMenu()
 menu5.DisplayMenu()
 menu6.DisplayMenu()
 menu7.DisplayMenu()
 
-print("\n\t\t\tJuices")
+print("\n\t\t\t🧃    Juices     🧃")
 menu8.DisplayMenu()
 menu9.DisplayMenu()
 menu10.DisplayMenu()
 menu11.DisplayMenu()
 
-print("\n\t\t\tDairy Products")
+print("\n\t\t\t🐮 Dairy Products 🐮")
 menu12.DisplayMenu()
 menu13.DisplayMenu()
 menu14.DisplayMenu()
 menu15.DisplayMenu()
 
-print("\n\t\t\tCold Drinks")
+print("\n\t\t\t🥤  Cold Drinks  🥤")
 menu16.DisplayMenu()
 menu17.DisplayMenu()
 menu18.DisplayMenu()
 menu19.DisplayMenu()
 
-print("\n\t\t\tHot Drinks")
+print("\n\t\t\t ♨️  Hot Drinks  ♨️")
 menu20.DisplayMenu()
 menu21.DisplayMenu()
 menu22.DisplayMenu()
@@ -152,49 +152,67 @@ menu={"0":"Lays- Salt and Vinegar",
 budget=int(input("\nEnter your budget: "))
 option=input("Please select your desirable item according to the number: ")
 
-amount=0
 if option=='0' or option=="7" or option=="18":
-    amount= budget - float(item0)
+    vat= float('%.2f'%((item0)*0.05))
+    total= vat+ item0
 elif option=='1' or option=="6" or option=="11":
     amount= budget - float(item1)
+    vat= float('%.2f'%((item1)*0.05))
+    total= vat+ item1
 elif option=="2" or option=="14":
     amount= budget - float(item2)
+    vat= float('%.2f'%((item2)*0.05))
+    total= vat+ item2
 elif option=="3":
     amount= budget - float(item3)
+    vat= float('%.2f'%((item3)*0.05))
+    total= vat+ item3
 elif option=='4':
-    amount= budget - float(item2)
-elif option=="5" or option=="10" or option=="12" or option =="15":
-    amount= budget - float(item6)
-elif option=="8":
-    amount= budget - float(item8)
-elif option=="9":
     amount= budget - float(item4)
+    vat= float('%.2f'%((item4)*0.05))
+    total= vat+ item4
+elif option=="5" or option=="10" or option=="12" or option =="15":
+    vat= float('%.2f'%((item5)*0.05))
+    total= vat+ item5
+elif option=="8":
+    vat= float('%.2f'%((item8)*0.05))
+    total= vat+ item8
+elif option=="9":
+    vat= float('%.2f'%((item9)*0.05))
+    total= vat+ item9
 elif option=="13" or option=="22":
-    amount= budget - float(item13)
+    vat= float('%.2f'%((item13)*0.05))
+    total= vat+ item13
 elif option=="17":
-    amount= budget - float(item17)
+    vat= float('%.2f'%((item17)*0.05))
+    total= vat+ item17
 elif option=="20":
     amount= budget - float(item20)
+    vat= float('%.2f'%((item20)*0.05))
+    total= vat+ item20
 elif option=="21":
-    amount= budget - float(item21)
+    vat= float('%.2f'%((item21)*0.05))
+    total= vat+ item21
 elif option=="23":
-    amount= budget- float(item23)
-
+    vat= float('%.2f'%((item23)*0.05))
+    total= vat+ item23
    
 else:
     print("Invalid input")
 
-vat= float('%.2f'%((amount)*0.05))
-total=vat+amount
+#vat= float('%.2f'%((amount)*0.05))
+#total= vat+ float(amount)
 ran= random.randint(100,1000)
 balance='%.2f'%(budget-total)
 
 for x, y in menu.items():
         if option==x:
             print("You have selected", y)
-            print("\n                                     CASH RECEIPT","\n\tReceipt number:",ran,"\n\tItem purchased:",y,"\n\t5% Vat:",vat,"\n\tTotal amount with 5% VAT:", total,"\n\tYour balance is:", balance,"AED","\n\tDate of purchase:", now,"\n")
-
-    
-print("Thank you for the purchase, please collect your item in the tray and balance through the output.")
+            print("\n\t\t\t\tCASH RECEIPT","\n\tReceipt number:",ran,"\n\tItem purchased:",y,"\n\t5% Vat:",vat,"\n\tTotal amount with 5% VAT:", total,"\n\tYour balance is:", balance,"AED","\n\tDate of purchase:", now,"\n")
 
 
+print("\t-----------------------------------------------------------")
+print("\t\t\t\tTHANK YOU \n\t\tPlease collect your item in the tray and \n\t\t\t balance through the output.")
+print("\t-----------------------------------------------------------")
+print("                              ║█║▌║█║▌│║▌║▌█║")
+print("\t-----------------------------------------------------------")
