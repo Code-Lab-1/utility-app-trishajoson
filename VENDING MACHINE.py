@@ -19,12 +19,10 @@ class Menu:
     
             
     
-    
-    
 menu0= Menu("0  ","Lays- Salt and Vinegar   ", "3.50 AED")
 menu1= Menu("1  ","Doritos- Sweet and Chilli", "2 AED")
 menu2= Menu("2  ","Pringles- BBQ Flavor     ", "5.50 AED")
-menu3= Menu("3  ","Lays- Salt and Vinegar   ", "1.75 AED")
+menu3= Menu("3  ","Salad Chips              ", "1.75 AED")
 
 menu4= Menu("4  ","Snickers                 ", "3 AED")
 menu5= Menu("5  ","Mars                     ", "2.50 AED")
@@ -89,7 +87,7 @@ menu21.DisplayMenu()
 menu22.DisplayMenu()
 menu23.DisplayMenu()
 
-
+#Assigining items to their respective prices
 item0= 3.5
 item1= 2
 item2= 5.5
@@ -120,8 +118,7 @@ item21=4
 item22=1
 item23=8
 
-
-
+#Creating a dictionary for calculation
 menu={"0":"Lays- Salt and Vinegar",
       "1":"Doritos- Sweet Chilli)",
       "2": "Pringles- BBQ Flavor",
@@ -147,28 +144,23 @@ menu={"0":"Lays- Salt and Vinegar",
       "22": "Karak Tea",
       "23": "Americano"}
 
-#PriceofDrinks= item9+item10+item11+item12+item13+item14+item15+item16+item17+item18+item19+item20+item21+item22+item23
-
 budget=int(input("\nEnter your budget: "))
 option=input("Please select your desirable item according to the number: ")
 
-if option=='0' or option=="7" or option=="18":
+
+if option=='0' or option=="7" or option=="16" or option=="18":
     vat= float('%.2f'%((item0)*0.05))
     total= vat+ item0
-elif option=='1' or option=="6" or option=="11":
-    amount= budget - float(item1)
+elif option=='1' or option=="6" or option=="11" or option=="19":
     vat= float('%.2f'%((item1)*0.05))
     total= vat+ item1
 elif option=="2" or option=="14":
-    amount= budget - float(item2)
     vat= float('%.2f'%((item2)*0.05))
     total= vat+ item2
 elif option=="3":
-    amount= budget - float(item3)
     vat= float('%.2f'%((item3)*0.05))
     total= vat+ item3
 elif option=='4':
-    amount= budget - float(item4)
     vat= float('%.2f'%((item4)*0.05))
     total= vat+ item4
 elif option=="5" or option=="10" or option=="12" or option =="15":
@@ -187,7 +179,6 @@ elif option=="17":
     vat= float('%.2f'%((item17)*0.05))
     total= vat+ item17
 elif option=="20":
-    amount= budget - float(item20)
     vat= float('%.2f'%((item20)*0.05))
     total= vat+ item20
 elif option=="21":
